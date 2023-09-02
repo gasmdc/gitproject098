@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Define the directory where log files are located
+log_directory="/var/log/"
+
+# Define a pattern to match log files (e.g., *.log for all .log files)
+log_pattern="*.log"
+
+# Confirm the user's intention to delete log files
+read -p "Are you sure you want to delete log files in $log_directory matching '$log_pattern'? (y/n): " confirmation
+
+if [ "$confirmation" == "y" ]; then
+    # Use the 'rm' command to delete log files
+        rm -f "$log_directory$log_pattern"
+	    echo "Log files deleted."
+	    else
+	        echo "Log files not deleted."
+		fi
